@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF; /* White */
+  --foreground: #0A0A0A; /* Dark Black */
+  
+  --color-maroon: #0A0A0A; /* Dark Black */
+  --color-red: #FF5E00; /* Vibrant Orange */
+  --color-marigold: #FF5E00; /* Vibrant Orange */
+  --color-gold: #FF7B00; /* Soft Orange */
+  --color-emerald: #1A1A1A; /* Very Dark Grey */
+  --color-plum: #000000; /* Pure Black */
+  --color-ivory: #FFFFFF; /* Pure White */
+  --color-cream: #F5F5F5; /* Soft Light Grey */
+  --color-charcoal: #0A0A0A; /* Dark Black */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-maroon: var(--color-maroon);
+  --color-red: var(--color-red);
+  --color-marigold: var(--color-marigold);
+  --color-gold: var(--color-gold);
+  --color-emerald: var(--color-emerald);
+  --color-plum: var(--color-plum);
+  --color-ivory: var(--color-ivory);
+  --color-cream: var(--color-cream);
+  --color-charcoal: var(--color-charcoal);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-sand);
+  color: var(--color-charcoal);
+}
