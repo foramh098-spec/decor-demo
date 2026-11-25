@@ -29,10 +29,10 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-lg mb-6">Services</h3>
             <ul className="space-y-4 text-sm text-[var(--color-ivory)]/80">
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Wedding Decor</Link></li>
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Corporate Events</Link></li>
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Birthday Parties</Link></li>
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Custom Styling</Link></li>
+              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Indian Marriage Mandaps</Link></li>
+              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Haldi, Mehndi &amp; Sangeet</Link></li>
+              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Kankotri Lekhan Ceremonies</Link></li>
+              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Birthdays &amp; Corporate Galas</Link></li>
             </ul>
           </div>
 

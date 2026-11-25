@@ -5,11 +5,10 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "ghost" | "link";
   size?: "default" | "sm" | "lg" | "icon";
-  asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", size = "default", asChild = false, ...props }, ref) => {
+  ({ className, variant = "primary", size = "default", ...props }, ref) => {
     return (
       <button
         className={cn(

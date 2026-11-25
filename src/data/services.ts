@@ -1,4 +1,4 @@
-import { Heart, Sparkles, PartyPopper, Camera, Palette, Crown, Baby, Briefcase } from "lucide-react";
+import { Heart, Sparkles, PartyPopper, Camera, Palette, Crown, Briefcase, type LucideIcon } from "lucide-react";
 
 export interface Service {
   id: string;
@@ -6,7 +6,7 @@ export interface Service {
   description: string;
   features: string[];
   image: string;
-  icon: any; 
+  icon: LucideIcon; 
 }
 
 export const services: Service[] = [
@@ -23,7 +23,7 @@ export const services: Service[] = [
     title: "Engagement Decor",
     description: "Elegant setups for your ring ceremony, designed to be intimate, beautiful, and the perfect backdrop for photos.",
     features: ["Ring Ceremony Stage", "Ambient Lighting", "Photo Booths", "Entrance Decor"],
-    image: "https://images.unsplash.com/photo-1545642412-2580a520f01a?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/events/engagement.webp",
     icon: Heart
   },
   {
@@ -63,7 +63,7 @@ export const services: Service[] = [
     title: "Corporate Event Decor",
     description: "Professional, branded styling for corporate galas, award nights, and company celebrations.",
     features: ["Brand Color Integration", "Stage Design", "VIP Seating Areas", "Registration Desks"],
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/events/corporate-event.jpg",
     icon: Briefcase
   },
   {
@@ -71,7 +71,7 @@ export const services: Service[] = [
     title: "Reception Decor",
     description: "High-glamour styling for unforgettable evening receptions, focusing on luxury, lighting, and dramatic impact.",
     features: ["Crystal Installations", "Dance Floor Decor", "Lush Centerpieces", "Luxury Seating"],
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/events/reception.jpg",
     icon: Camera
   },
   {

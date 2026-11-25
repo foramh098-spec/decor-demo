@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CTASection } from "@/components/sections/CTASection";
@@ -36,21 +37,31 @@ export default function ProjectsPage() {
             
             {/* Filters */}
             <ScrollReveal delay={0.2}>
-              <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={cn(
-                      "px-5 py-2 text-sm transition-all duration-300 rounded-full border",
-                      activeCategory === cat
-                        ? "bg-[var(--color-charcoal)] text-[var(--color-ivory)] border-[var(--color-charcoal)]"
-                        : "bg-transparent text-[var(--color-charcoal)] border-[var(--color-cream)] hover:border-[var(--color-charcoal)]"
-                    )}
-                  >
-                    {cat}
-                  </button>
-                ))}
+              <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+                {categories.map((cat) => {
+                  const isActive = activeCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => setActiveCategory(cat)}
+                      className={cn(
+                        "relative px-5 py-2 text-sm transition-colors duration-300 rounded-full border cursor-pointer",
+                        isActive
+                          ? "text-[var(--color-ivory)] border-[var(--color-charcoal)]"
+                          : "bg-transparent text-[var(--color-charcoal)] border-[var(--color-sand)] hover:border-[var(--color-charcoal)]"
+                      )}
+                    >
+                      {isActive && (
+                        <motion.span
+                          layoutId="activeEventCategory"
+                          transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                          className="absolute inset-0 rounded-full bg-[var(--color-charcoal)] -z-10"
+                        />
+                      )}
+                      {cat}
+                    </button>
+                  );
+                })}
               </div>
             </ScrollReveal>
           </div>

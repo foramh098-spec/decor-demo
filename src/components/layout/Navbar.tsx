@@ -11,18 +11,20 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" },
+  { name: "Events", href: "/projects" },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isOverHero = pathname === "/" && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -32,40 +34,61 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-[var(--color-ivory)]/90 backdrop-blur-md border-b border-[var(--color-cream)] py-4"
-          : "bg-transparent py-6"
+          ? "bg-[var(--color-ivory)]/95 backdrop-blur-md border-b border-[var(--color-cream)] py-4 shadow-sm"
+          : isOverHero
+            ? "bg-gradient-to-b from-black/55 to-transparent py-6"
+            : "bg-[var(--color-ivory)]/80 backdrop-blur-sm py-5"
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-serif tracking-tight text-[var(--color-charcoal)]">
-          DecorStudio<span className="text-[var(--color-maroon)]">.</span>
+        <Link
+          href="/"
+          className={cn(
+            "text-2xl font-serif tracking-tight transition-colors",
+            isOverHero ? "text-[var(--color-ivory)]" : "text-[var(--color-charcoal)]"
+          )}
+        >
+          DecorStudio<span className="text-[var(--color-gold)]">.</span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-[var(--color-marigold)]",
-                pathname === link.href ? "text-[var(--color-charcoal)] border-b border-[var(--color-charcoal)]" : "text-[var(--color-charcoal)]/80"
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-[var(--color-gold)]",
+                  isOverHero
+                    ? active
+                      ? "text-[var(--color-ivory)] border-b border-[var(--color-gold)] pb-0.5"
+                      : "text-[var(--color-ivory)]/85"
+                    : active
+                      ? "text-[var(--color-charcoal)] border-b border-[var(--color-marigold)] pb-0.5"
+                      : "text-[var(--color-charcoal)]/80"
+                )}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* CTA & Mobile Toggle */}
         <div className="flex items-center gap-4">
           <Link href="/contact" className="hidden md:block">
-            <Button variant="primary">Plan Your Event</Button>
+            <Button variant={isOverHero ? "secondary" : "primary"}>Plan Your Event</Button>
           </Link>
           
           <button
-            className="md:hidden text-[var(--color-charcoal)]"
+            aria-label="Toggle navigation menu"
+            className={cn(
+              "md:hidden transition-colors",
+              isOverHero ? "text-[var(--color-ivory)]" : "text-[var(--color-charcoal)]"
+            )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

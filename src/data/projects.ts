@@ -126,16 +126,16 @@ export const projects: Project[] = [
     category: "Engagements",
     location: "Mumbai",
     year: "2024",
-    description: "A sophisticated evening affair with modern minimalism and soft lighting.",
+    description: "A romantic evening affair with cascading wisteria blooms and warm fairy light curtains.",
     images: [
-      "https://images.unsplash.com/photo-1545642412-2580a520f01a?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&q=80&w=800"
+      "/images/events/engagement.webp",
+      "/images/events/private-event.webp"
     ],
-    overview: "An intimate engagement ceremony hosted at a luxury hotel banquet, focusing on contemporary elegance rather than traditional grandeur.",
-    challenge: "Transforming a standard banquet hall into a personalized, warm, and highly photogenic environment for a modern couple.",
-    approach: "We introduced a sleek, geometric stage design softened by cascading white orchids and pampas grass. Ambient uplighting and hundreds of floating candles set a romantic mood.",
-    result: "A chic, contemporary celebration space that perfectly matched the couple's modern aesthetic and provided a warm atmosphere for their close friends and family.",
-    materials: ["White Orchids", "Pampas Grass", "Floating Candles", "Mirrored Elements"]
+    overview: "An intimate engagement ceremony hosted at a luxury hotel banquet, focusing on contemporary romance and delicate floral draping.",
+    challenge: "Transforming a dark-paneled banquet wall into a bright, ethereal, and highly photogenic focal stage for the ring exchange.",
+    approach: "We layered sheer ivory curtains over cascading warm fairy lights, crowned with lush hanging wisteria and greenery across the backdrop.",
+    result: "A dreamy, softly illuminated stage that framed the couple's ring ceremony beautifully in both candid and portrait photography.",
+    materials: ["Cascading Wisteria", "Warm Fairy Lights", "Sheer Ivory Drapes", "Floral Centerpieces"]
   },
   {
     id: "4",
@@ -144,16 +144,15 @@ export const projects: Project[] = [
     category: "Baby Showers",
     location: "Delhi",
     year: "2023",
-    description: "A pastel wonderland filled with lush blooms and personalized details.",
+    description: "A blush pastel welcome setup filled with organic balloons, roses, and bespoke signage.",
     images: [
-      "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=800"
+      "/images/events/baby-shower.png"
     ],
-    overview: "A whimsical daytime baby shower hosted in a private botanical garden setting.",
-    challenge: "Balancing a heavily floral theme without it feeling overwhelming or cliché, keeping it fresh and modern.",
-    approach: "We used a refined pastel color palette featuring hydrangeas, peonies, and baby's breath. Custom signage, a beautifully styled dessert cart, and elegant table settings completed the look.",
-    result: "A stunning, joy-filled environment that provided gorgeous photo opportunities and a delightful experience for the mother-to-be.",
-    materials: ["Fresh Hydrangeas", "Custom Signage", "Pastel Linens", "Gold Cutlery"]
+    overview: "An intimate daytime baby shower styled with soft blush tones, bespoke calligraphy, and romantic floral clusters.",
+    challenge: "Balancing a delicate pastel balloon and floral theme so it felt elevated, cohesive, and photo-ready in a compact indoor space.",
+    approach: "We paired custom watercolor welcome signage on an ivory easel with matte blush balloons, lush garden roses, and eucalyptus sprigs.",
+    result: "A charming, joy-filled focal corner that welcomed guests warmly and created effortless photo moments for the parents-to-be.",
+    materials: ["Blush Matte Balloons", "Garden Roses", "Custom Welcome Easel", "Eucalyptus Foliage"]
   },
   {
     id: "5",
@@ -162,16 +161,52 @@ export const projects: Project[] = [
     category: "Weddings",
     location: "Bangalore",
     year: "2024",
-    description: "A high-glamour reception featuring crystal installations and deep jewel tones.",
+    description: "A high-glamour reception featuring architectural lighting, chandeliers, and fine dining tablescapes.",
     images: [
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=800"
+      "/images/events/reception.jpg",
+      "/images/events/indian-marriage-palace.webp"
     ],
-    overview: "A grand wedding reception designed to impress, featuring high-impact visual elements and a sophisticated atmosphere.",
-    challenge: "Designing a massive stage and dance floor area that felt cohesive and luxurious from every angle of the large venue.",
-    approach: "We focused on dramatic ceiling installations, suspending thousands of crystal strands and warm filament bulbs. The stage featured a custom velvet backdrop with floral borders in deep burgundy and emerald.",
-    result: "A spectacular, high-energy environment that radiated luxury and provided a flawless setting for the evening's performances and dancing.",
-    materials: ["Suspended Crystals", "Velvet Backdrops", "Jewel-toned Florals", "LED Dance Floor"]
+    overview: "A grand wedding reception designed to impress, featuring dramatic architectural ceiling lighting and elevated banquet styling.",
+    challenge: "Designing a large ballroom reception that felt cohesive, atmospheric, and luxurious from every guest table.",
+    approach: "We paired warm sculptural pendant chandeliers and dynamic violet-amber uplighting with crisp navy linens, crystal stemware, and jewel-toned floral centerpieces.",
+    result: "A spectacular, high-energy ballroom atmosphere that radiated luxury throughout the evening's dinner and performances.",
+    materials: ["Sculptural Chandeliers", "Dynamic Uplighting", "Crystal Glassware", "Jewel-Toned Florals"]
+  },
+  {
+    id: "10",
+    slug: "botanical-corporate-gala",
+    title: "Botanical Corporate Gala",
+    category: "Corporate",
+    location: "Mumbai",
+    year: "2025",
+    description: "An upscale corporate awards gala featuring a suspended botanical canopy and warm ambient dining.",
+    images: [
+      "/images/events/corporate-event.jpg",
+      "/images/events/reception.jpg"
+    ],
+    overview: "An executive annual awards dinner transforming a convention ballroom into an immersive botanical evening.",
+    challenge: "Softening a vast corporate hall while maintaining clear sightlines to the main presentation stage and branded screens.",
+    approach: "We engineered an overhead suspended greenery ceiling dotted with warm Edison bulbs, paired with cross-back wood chairs, gold-trimmed runners, and crisp stage lighting.",
+    result: "A refined, memorable corporate gala environment that elevated brand hospitality and guest engagement.",
+    materials: ["Suspended Greenery Canopy", "Edison Bulb Grid", "Cross-Back Dining Chairs", "Custom Stage AV"]
+  },
+  {
+    id: "11",
+    slug: "garden-private-soiree",
+    title: "Garden Private Soirée",
+    category: "Private Events",
+    location: "Pune",
+    year: "2025",
+    description: "An enchanting outdoor private celebration framed by pressed-look floral curtains and wildflower jars.",
+    images: [
+      "/images/events/private-event.webp",
+      "/images/events/engagement.webp"
+    ],
+    overview: "An intimate milestone anniversary and private garden gathering celebrating natural botanical textures in open sunlight.",
+    challenge: "Creating a sculptural outdoor photo backdrop that felt organic to the surrounding garden trees without blocking natural light.",
+    approach: "We built a timber frame draped in sheer linen panels interwoven with vertical wildflower garlands and clustered glass apothecary jars filled with fresh meadow blooms.",
+    result: "A serene, sunlit celebration centerpiece that felt effortlessly romantic and bespoke for the hosts and their closest guests.",
+    materials: ["Timber Arch Frame", "Vertical Wildflower Garlands", "Sheer Linen Drapes", "Glass Floral Jars"]
   }
 ];
 

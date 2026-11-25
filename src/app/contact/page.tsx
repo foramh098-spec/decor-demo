@@ -17,10 +17,10 @@ export default function ContactPage() {
               <div className="lg:col-span-5">
                 <ScrollReveal>
                   <h1 className="text-4xl md:text-6xl font-serif text-[var(--color-charcoal)] leading-tight mb-8">
-                    Let's Plan Your Perfect Event.
+                    Let&apos;s Plan Your Perfect Event.
                   </h1>
                   <p className="text-lg text-[var(--color-charcoal)]/80 font-light leading-relaxed mb-12">
-                    Whether you are planning a grand wedding or an intimate celebration, we're here to help you bring your vision to life.
+                    Whether you are planning a grand wedding or an intimate celebration, we&apos;re here to help you bring your vision to life.
                   </p>
 
                   <div className="space-y-8 mb-12">

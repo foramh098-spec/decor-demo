@@ -18,7 +18,7 @@ export default function AboutPage() {
                 Creating Beautiful Celebrations, One Event at a Time.
               </h1>
               <p className="text-xl text-[var(--color-charcoal)]/80 font-light leading-relaxed">
-                DecorStudio is a premier event styling firm dedicated to creating beautiful, highly personalized environments for life's most important celebrations.
+                DecorStudio is a premier event styling firm dedicated to creating beautiful, highly personalized environments for life&apos;s most important celebrations.
               </p>
             </ScrollReveal>
           </div>
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <ScrollReveal>
               <div className="relative aspect-[16/9] w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=2000"
+                  src="/images/events/corporate-event.jpg"
                   alt="DecorStudio team styling an event"
                   fill
                   className="object-cover"
@@ -49,13 +49,13 @@ export default function AboutPage() {
                   <SectionHeading title="Our Design Philosophy" align="left" />
                   <div className="space-y-6 text-[var(--color-charcoal)]/80 text-lg font-light leading-relaxed">
                     <p>
-                      We believe that a well-designed event is not just about aesthetics—it's about the atmosphere and how it makes your guests feel. Our philosophy centers on creating immersive environments through Theme & Concept Design, Floral Decor, and Complete Venue Transformation.
+                      We believe that a well-designed event is not just about aesthetics—it&apos;s about the atmosphere and how it makes your guests feel. Our philosophy centers on creating immersive environments through Theme & Concept Design, Floral Decor, and Complete Venue Transformation.
                     </p>
                     <p>
                       By carefully selecting lighting, crafting Stage & Backdrop Styling, and perfecting Table Styling and Entrance Decor, we create spaces that feel magical and celebratory.
                     </p>
                     <p>
-                      Most importantly, we don't impose a single "house style." Instead, we listen intently to our clients, ensuring that Personalized Details shine through, translating your vision into a cohesive, elevated reality.
+                      Most importantly, we don&apos;t impose a single &ldquo;house style.&rdquo; Instead, we listen intently to our clients, ensuring that Personalized Details shine through, translating your vision into a cohesive, elevated reality.
                     </p>
                   </div>
                 </ScrollReveal>

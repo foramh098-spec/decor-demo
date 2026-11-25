@@ -3,9 +3,11 @@ import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { EventShowcase3D } from "@/components/sections/EventShowcase3D";
 import { CTASection } from "@/components/sections/CTASection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { Tilt3DCard } from "@/components/animations/Tilt3DCard";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { ProjectCard } from "@/components/cards/ProjectCard";
 import { TestimonialCard } from "@/components/cards/TestimonialCard";
@@ -28,13 +30,17 @@ export default function Home() {
         <section className="py-24 bg-[var(--color-ivory)]">
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <ScrollReveal direction="right" className="order-2 lg:order-1 relative aspect-[3/4] lg:aspect-square w-full">
-                <Image
-                  src="https://images.unsplash.com/photo-1606214539665-2ea0731dfa6c?auto=format&fit=crop&q=80&w=1200"
-                  alt="Traditional Indian event decoration"
-                  fill
-                  className="object-cover"
-                />
+              <ScrollReveal direction="right" className="order-2 lg:order-1">
+                <Tilt3DCard maxTilt={6} className="rounded-xl">
+                  <div className="relative aspect-[3/4] lg:aspect-square w-full overflow-hidden rounded-xl shadow-lg">
+                    <Image
+                      src="/images/events/indian-marriage-palace.webp"
+                      alt="Traditional Indian event decoration"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </Tilt3DCard>
               </ScrollReveal>
               
               <div className="order-1 lg:order-2">
@@ -104,8 +110,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Interactive 3D Spatial Concept Studio */}
+        <EventShowcase3D />
+
         {/* Why Choose Us */}
-        <section className="py-24 bg-[var(--color-charcoal)] text-[var(--color-ivory)]">
+        <section className="py-24 bg-[var(--color-emerald)] text-[var(--color-ivory)]">
           <div className="container mx-auto px-4 md:px-8">
             <ScrollReveal>
               <div className="text-center mb-16">

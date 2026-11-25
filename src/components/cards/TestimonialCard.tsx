@@ -7,7 +7,7 @@ interface TestimonialCardProps {
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
     <div className="bg-[var(--color-ivory)] p-8 md:p-12 border border-[var(--color-cream)] text-center max-w-3xl mx-auto">
-      <div className="text-[var(--color-gold)] text-4xl font-serif leading-none mb-6">"</div>
+      <div className="text-[var(--color-gold)] text-4xl font-serif leading-none mb-6">&ldquo;</div>
       <p className="text-lg md:text-xl text-[var(--color-charcoal)] font-light leading-relaxed mb-8 italic">
         {testimonial.quote}
       </p>

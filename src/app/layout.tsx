@@ -13,8 +13,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Premium Interior & Home Decor Studio | Decor Company",
-  description: "Discover elegant interior design and decor solutions crafted to transform your home into a beautiful, comfortable, and personalized space.",
+  title: "DecorStudio | Luxury Event Management & Wedding Decor Studio",
+  description: "Bespoke Indian marriage mandaps, Haldi, Sangeet, Mehndi, Kankotri Lekhan, birthday parties, and corporate gala decor crafted with precision.",
 };
 
 export default function RootLayout({
