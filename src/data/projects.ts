@@ -207,6 +207,58 @@ export const projects: Project[] = [
     approach: "We built a timber frame draped in sheer linen panels interwoven with vertical wildflower garlands and clustered glass apothecary jars filled with fresh meadow blooms.",
     result: "A serene, sunlit celebration centerpiece that felt effortlessly romantic and bespoke for the hosts and their closest guests.",
     materials: ["Timber Arch Frame", "Vertical Wildflower Garlands", "Sheer Linen Drapes", "Glass Floral Jars"]
+  },
+  {
+    id: "12",
+    slug: "milestone-anniversary-dinner",
+    title: "Milestone Anniversary Dinner",
+    category: "Anniversary",
+    location: "Mumbai",
+    year: "2025",
+    description: "An unforgettable outdoor anniversary dinner beneath a sweeping canopy of thousands of warm fairy lights.",
+    images: [
+      "/images/events/anniversary.jpg"
+    ],
+    overview: "A silver-jubilee anniversary evening hosted on a private lawn, designed to feel intimate, luminous, and timeless.",
+    challenge: "Transforming an open lawn at night into a cohesive, warmly lit dining room without heavy tenting.",
+    approach: "We rigged a sweeping gabled canopy of warm-white fairy lights above gold-sequin round tables, Chiavari chairs, and lush white-and-ivory floral centerpieces.",
+    result: "A breathtaking starlit dining experience where guests celebrated late into the evening under a glowing golden sky.",
+    materials: ["Fairy Light Canopy", "Gold Sequin Linens", "Gold Chiavari Chairs", "Ivory Floral Centerpieces"]
+  },
+  {
+    id: "13",
+    slug: "artisan-flea-market",
+    title: "Artisan Flea Market & Pop-Up",
+    category: "Flea Market",
+    location: "Ahmedabad",
+    year: "2025",
+    description: "A lively weekend flea market styled with curated vendor booths, festival bunting, and interactive community zones.",
+    images: [
+      "/images/events/flea-market.webp"
+    ],
+    overview: "A multi-vendor lifestyle and art flea market bringing together independent creators, live music, and curated street food.",
+    challenge: "Giving dozens of individual stalls a cohesive, photogenic festival identity while keeping walkways breezy and accessible.",
+    approach: "We styled unified canopy booths with crisp signage, wooden display risers, overhead bunting, and dedicated photo corners that encouraged foot traffic across every aisle.",
+    result: "A buzzing, high-footfall weekend market with strong vendor visibility and vibrant social sharing throughout the event.",
+    materials: ["Custom Booth Canopies", "Festival Bunting", "Wooden Display Crates", "Warm String Lights"]
+  },
+  {
+    id: "14",
+    slug: "navratri-garba-pandal",
+    title: "Navratri & Garba Pandal",
+    category: "Navratri",
+    location: "Vadodara",
+    year: "2025",
+    description: "A devotional and high-energy Navratri setup pairing crimson-yellow pandal drapes with marigold garlands and brass diyas.",
+    images: [
+      "/images/events/navratri.jpg",
+      "/images/events/navratri-garba.webp"
+    ],
+    overview: "A nine-night Navratri & Garba celebration featuring an auspicious Mataji altar alongside a vibrant open-air dandiya ground.",
+    challenge: "Balancing sacred temple-inspired altar styling with durable, head-clearance lighting for hundreds of energetic Garba dancers.",
+    approach: "We framed the central Maa Durga altar with layered saffron and crimson drapes, marigold clusters, warm fairy light curtains, and brass standing lamps.",
+    result: "A deeply devotional yet electrifying festive venue that elevated every evening's Aarti and Garba night.",
+    materials: ["Crimson & Yellow Drapes", "Marigold Clusters", "Brass Standing Diyas", "Fairy Light Curtains"]
   }
 ];
 

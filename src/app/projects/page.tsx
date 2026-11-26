@@ -10,7 +10,7 @@ import { ProjectCard } from "@/components/cards/ProjectCard";
 import { projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-const categories = ["All", "Weddings", "Haldi & Mehndi", "Sangeet", "Kankotri Lekhan", "Birthdays", "Engagements", "Baby Showers", "Corporate", "Private Events"];
+const categories = ["All", "Weddings", "Haldi & Mehndi", "Sangeet", "Kankotri Lekhan", "Navratri", "Anniversary", "Birthdays", "Baby Showers", "Engagements", "Flea Market", "Corporate", "Private Events"];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");

@@ -115,8 +115,12 @@ export default function ContactPage() {
                             <option value="haldi-mehndi">Haldi &amp; Mehndi</option>
                             <option value="sangeet">Sangeet Night</option>
                             <option value="kankotri-lekhan">Kankotri Lekhan</option>
+                            <option value="navratri">Navratri &amp; Garba</option>
                             <option value="engagement">Engagement</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="baby-shower">Baby Shower</option>
                             <option value="birthday">Birthday Party</option>
+                            <option value="flea-market">Flea Market / Pop-Up</option>
                             <option value="corporate">Corporate Event</option>
                             <option value="other">Other Celebration</option>
                           </select>

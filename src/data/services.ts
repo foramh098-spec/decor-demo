@@ -1,4 +1,4 @@
-import { Heart, Sparkles, PartyPopper, Camera, Palette, Crown, Briefcase, type LucideIcon } from "lucide-react";
+import { Heart, Sparkles, PartyPopper, Camera, Palette, Crown, Briefcase, Baby, CalendarHeart, Store, Flame, type LucideIcon } from "lucide-react";
 
 export interface Service {
   id: string;
@@ -81,5 +81,37 @@ export const services: Service[] = [
     features: ["Concept Development", "Custom Props", "Venue Transformation", "Personalized Details"],
     image: "/images/events/mehndi.webp",
     icon: Palette
+  },
+  {
+    id: "baby-shower",
+    title: "Baby Shower Decor",
+    description: "Soft pastel floral walls, organic balloon garlands, and custom welcome signage crafted for joyful daytime baby showers.",
+    features: ["Pastel Balloon Garlands", "Custom Welcome Easels", "Dessert Table Styling", "Floral Photo Corners"],
+    image: "/images/events/baby-shower.png",
+    icon: Baby
+  },
+  {
+    id: "anniversary-decor",
+    title: "Anniversary Decor",
+    description: "Romantic, candlelit dining canopies and bespoke floral backdrops celebrating milestone anniversaries under the stars.",
+    features: ["Fairy Light Canopies", "Candlelit Tablescapes", "Couple Backdrop Arches", "Personalized Memory Displays"],
+    image: "/images/events/anniversary.jpg",
+    icon: CalendarHeart
+  },
+  {
+    id: "flea-market",
+    title: "Flea Market & Pop-Up Decor",
+    description: "Curated festival stalls, artisan booth styling, festive bunting, and warm ambient lighting for vibrant community flea markets.",
+    features: ["Artisan Stall Setup", "Bunting & Canopy Styling", "String Light Pathways", "Interactive Photo Zones"],
+    image: "/images/events/flea-market.webp",
+    icon: Store
+  },
+  {
+    id: "navratri-decor",
+    title: "Navratri & Garba Decor",
+    description: "Vibrant traditional pandals, colorful drapes, marigold canopies, and festive lighting tailored for Garba and Dandiya nights.",
+    features: ["Pandal & Mataji Altar", "Bandhani & Marigold Drapes", "Garba Ground Lighting", "Dandiya Photo Corners"],
+    image: "/images/events/navratri.jpg",
+    icon: Flame
   }
 ];
