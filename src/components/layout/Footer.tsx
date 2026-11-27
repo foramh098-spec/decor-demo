@@ -1,7 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { uiText } from "@/data/translations";
 
 export function Footer() {
+  const { lang } = useLanguage();
+  const t = uiText[lang].footer;
+  const c = uiText[lang].contactPage;
+
   return (
     <footer className="bg-[var(--color-plum)] text-[var(--color-ivory)] pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-8">
@@ -11,37 +19,42 @@ export function Footer() {
               DecorStudio<span className="text-[var(--color-gold)]">.</span>
             </Link>
             <p className="text-[var(--color-ivory)]/70 text-sm leading-relaxed mb-6">
-              From elegant weddings to vibrant celebrations, we create beautifully styled event spaces that make every moment unforgettable.
+              {t.desc}
             </p>
-            <h4 className="font-serif text-lg text-[var(--color-gold)] mb-2">Celebrate with style.</h4>
+            <h4 className="font-serif text-lg text-[var(--color-gold)] mb-2">
+              {uiText[lang].nav.brandTagline}
+            </h4>
           </div>
 
           <div>
-            <h3 className="font-serif text-lg mb-6">Quick Links</h3>
+            <h3 className="font-serif text-lg mb-6">{t.quickLinks}</h3>
             <ul className="space-y-4 text-sm text-[var(--color-ivory)]/80">
-              <li><Link href="/" className="hover:text-[var(--color-gold)] transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-[var(--color-gold)] transition-colors">About Us</Link></li>
-              <li><Link href="/projects" className="hover:text-[var(--color-gold)] transition-colors">Portfolio</Link></li>
-              <li><Link href="/contact" className="hover:text-[var(--color-gold)] transition-colors">Contact</Link></li>
+              <li><Link href="/" className="hover:text-[var(--color-gold)] transition-colors">{t.home}</Link></li>
+              <li><Link href="/about" className="hover:text-[var(--color-gold)] transition-colors">{t.about}</Link></li>
+              <li><Link href="/projects" className="hover:text-[var(--color-gold)] transition-colors">{t.portfolio}</Link></li>
+              <li><Link href="/contact" className="hover:text-[var(--color-gold)] transition-colors">{t.contact}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-serif text-lg mb-6">Services</h3>
+            <h3 className="font-serif text-lg mb-6">{t.servicesTitle}</h3>
             <ul className="space-y-4 text-sm text-[var(--color-ivory)]/80">
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Indian Marriage Mandaps</Link></li>
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Haldi, Mehndi &amp; Sangeet</Link></li>
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Kankotri Lekhan Ceremonies</Link></li>
-              <li><Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">Birthdays &amp; Corporate Galas</Link></li>
+              {t.serviceLinks.map((item) => (
+                <li key={item}>
+                  <Link href="/services" className="hover:text-[var(--color-gold)] transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-serif text-lg mb-6">Contact</h3>
+            <h3 className="font-serif text-lg mb-6">{t.contactTitle}</h3>
             <ul className="space-y-4 text-sm text-[var(--color-ivory)]/80">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[var(--color-gold)] shrink-0" />
-                <span>123 Design Avenue,<br />Mumbai, India 400001</span>
+                <span>{c.studioAddressLine1}<br />{c.studioAddressLine2}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[var(--color-gold)] shrink-0" />
@@ -53,7 +66,7 @@ export function Footer() {
               </li>
               <li className="pt-2">
                 <p className="text-xs uppercase tracking-widest text-[var(--color-gold)] font-semibold mb-3">
-                  Follow Us
+                  {t.followUs}
                 </p>
                 <div className="flex items-center gap-3">
                   <a
@@ -107,10 +120,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[var(--color-ivory)]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--color-ivory)]/60">
-          <p>&copy; {new Date().getFullYear()} DecorStudio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t.rights}</p>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-[var(--color-ivory)]">Privacy Policy</Link>
-            <Link href="#" className="hover:text-[var(--color-ivory)]">Terms of Service</Link>
+            <Link href="#" className="hover:text-[var(--color-ivory)]">{t.privacy}</Link>
+            <Link href="#" className="hover:text-[var(--color-ivory)]">{t.terms}</Link>
           </div>
         </div>
       </div>

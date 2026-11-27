@@ -1,6 +1,10 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { type Service } from "@/data/services";
+import { getLocalizedService, type Service } from "@/data/services";
+import { uiText } from "@/data/translations";
+import { useLanguage } from "@/context/LanguageContext";
 import { Tilt3DCard } from "../animations/Tilt3DCard";
 
 interface ServiceCardProps {
@@ -9,7 +13,9 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, index }: ServiceCardProps) {
-  const Icon = service.icon;
+  const { lang } = useLanguage();
+  const localized = getLocalizedService(service, lang);
+  const Icon = localized.icon;
   
   return (
     <Tilt3DCard maxTilt={6} className="rounded-lg">
@@ -26,13 +32,13 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
           </div>
         </div>
         <h3 className="text-2xl font-serif text-[var(--color-charcoal)] mb-4 group-hover:text-[var(--color-maroon)] transition-colors">
-          {service.title}
+          {localized.title}
         </h3>
         <p className="text-[var(--color-charcoal)]/80 text-sm leading-relaxed mb-6">
-          {service.description}
+          {localized.description}
         </p>
         <div className="mt-auto flex items-center text-[var(--color-charcoal)] font-medium text-sm group-hover:text-[var(--color-marigold)] transition-colors">
-          Explore Service <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+          {uiText[lang].cards.exploreService} <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1.5 transition-transform duration-300" />
         </div>
       </Link>
     </Tilt3DCard>

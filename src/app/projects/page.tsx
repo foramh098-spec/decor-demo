@@ -8,12 +8,16 @@ import { CTASection } from "@/components/sections/CTASection";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { ProjectCard } from "@/components/cards/ProjectCard";
 import { projects } from "@/data/projects";
+import { getCategoryLabel, uiText } from "@/data/translations";
+import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
 
 const categories = ["All", "Weddings", "Haldi & Mehndi", "Sangeet", "Kankotri Lekhan", "Navratri", "Anniversary", "Birthdays", "Baby Showers", "Engagements", "Flea Market", "Corporate", "Private Events"];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const { lang } = useLanguage();
+  const t = uiText[lang].projectsPage;
 
   const filteredProjects = activeCategory === "All" 
     ? projects 
@@ -28,10 +32,10 @@ export default function ProjectsPage() {
           <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
             <ScrollReveal>
               <h1 className="text-4xl md:text-6xl font-serif text-[var(--color-charcoal)] leading-tight mb-8">
-                Selected Work
+                {t.title}
               </h1>
               <p className="text-xl text-[var(--color-charcoal)]/80 font-light leading-relaxed mb-12">
-                A curated selection of our most recent event styling and decor projects across weddings, corporate galas, and private celebrations.
+                {t.subtitle}
               </p>
             </ScrollReveal>
             
@@ -58,7 +62,7 @@ export default function ProjectsPage() {
                           className="absolute inset-0 rounded-full bg-[var(--color-charcoal)] -z-10"
                         />
                       )}
-                      {cat}
+                      {getCategoryLabel(cat, lang)}
                     </button>
                   );
                 })}
@@ -80,7 +84,7 @@ export default function ProjectsPage() {
             
             {filteredProjects.length === 0 && (
               <div className="text-center py-20 text-[var(--color-charcoal)]/60">
-                No projects found in this category.
+                {t.empty}
               </div>
             )}
           </div>

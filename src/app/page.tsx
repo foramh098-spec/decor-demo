@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
@@ -14,10 +16,14 @@ import { TestimonialCard } from "@/components/cards/TestimonialCard";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { testimonials } from "@/data/testimonials";
+import { uiText } from "@/data/translations";
+import { useLanguage } from "@/context/LanguageContext";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export default function Home() {
+  const { lang } = useLanguage();
+  const t = uiText[lang].home;
   const featuredProjects = projects.slice(0, 4);
 
   return (
@@ -46,16 +52,16 @@ export default function Home() {
               <div className="order-1 lg:order-2">
                 <ScrollReveal direction="left">
                   <span className="block text-sm uppercase tracking-widest text-[var(--color-marigold)] mb-6 font-semibold">
-                    Who We Are
+                    {t.whoWeAre}
                   </span>
                   <h2 className="text-3xl md:text-5xl font-serif text-[var(--color-charcoal)] mb-8 leading-tight">
-                    Your Celebration, Beautifully Designed.
+                    {t.introTitle}
                   </h2>
                   <p className="text-lg text-[var(--color-charcoal)]/80 font-light mb-8 leading-relaxed">
-                    We specialize in transforming venues into stunning experiences through creative decor, thoughtful styling, beautiful floral arrangements, lighting, and personalized details.
+                    {t.introDesc}
                   </p>
                   <Link href="/about" className="inline-flex items-center text-[var(--color-charcoal)] font-semibold border-b border-[var(--color-charcoal)] pb-1 hover:text-[var(--color-marigold)] hover:border-[var(--color-marigold)] transition-colors">
-                    Discover Our Story <ArrowRight size={18} className="ml-2" />
+                    {t.discoverStory} <ArrowRight size={18} className="ml-2" />
                   </Link>
                 </ScrollReveal>
               </div>
@@ -67,12 +73,12 @@ export default function Home() {
         <section className="py-24 bg-[var(--color-cream)]">
           <div className="container mx-auto px-4 md:px-8">
             <ScrollReveal>
-              <SectionHeading title="Our Expertise" subtitle="What We Do" />
+              <SectionHeading title={t.expertiseTitle} subtitle={t.expertiseSubtitle} />
             </ScrollReveal>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
               {services.map((service, index) => (
-                <ScrollReveal key={service.id} delay={index * 0.1}>
+                <ScrollReveal key={service.id} delay={index * 0.06}>
                   <ServiceCard service={service} index={index} />
                 </ScrollReveal>
               ))}
@@ -85,11 +91,11 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-8">
             <div className="flex justify-between items-end mb-16">
               <ScrollReveal>
-                <SectionHeading title="Our Signature Events" subtitle="Portfolio" align="left" className="mb-0" />
+                <SectionHeading title={t.signatureTitle} subtitle={t.signatureSubtitle} align="left" className="mb-0" />
               </ScrollReveal>
               <ScrollReveal delay={0.2} className="hidden md:block">
                 <Link href="/projects">
-                  <Button variant="outline">View All Events</Button>
+                  <Button variant="outline">{t.viewAllEvents}</Button>
                 </Link>
               </ScrollReveal>
             </div>
@@ -104,7 +110,7 @@ export default function Home() {
 
             <div className="mt-12 text-center md:hidden">
               <Link href="/projects">
-                <Button variant="outline" className="w-full">View All Events</Button>
+                <Button variant="outline" className="w-full">{t.viewAllEvents}</Button>
               </Link>
             </div>
           </div>
@@ -119,21 +125,16 @@ export default function Home() {
             <ScrollReveal>
               <div className="text-center mb-16">
                 <span className="block text-sm uppercase tracking-widest text-[var(--color-gold)] mb-4 font-semibold">
-                  Why Us
+                  {t.whyUsSubtitle}
                 </span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif">
-                  The DecorStudio Difference
+                  {t.whyUsTitle}
                 </h2>
               </div>
             </ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              {[
-                { title: "Creative & Customized Concepts", desc: "Every design is unique, built around your personal style and story." },
-                { title: "Premium Decor & Florals", desc: "We source only the finest blooms, fabrics, and props for an elevated look." },
-                { title: "Attention to Every Detail", desc: "From tablescapes to grand entrances, we obsess over the small things." },
-                { title: "Professional Event Execution", desc: "Seamless coordination and flawless setup on the day of your event." }
-              ].map((benefit, i) => (
+              {t.benefits.map((benefit, i) => (
                 <ScrollReveal key={i} delay={i * 0.1} className="text-center">
                   <div className="w-12 h-12 mx-auto rounded-full bg-[var(--color-gold)]/20 flex items-center justify-center mb-6 text-[var(--color-gold)]">
                     <Check size={24} />
@@ -150,7 +151,7 @@ export default function Home() {
         <section className="py-24 bg-[var(--color-ivory)]">
           <div className="container mx-auto px-4 md:px-8">
             <ScrollReveal>
-              <SectionHeading title="From Vision to Reality" subtitle="Our Process" />
+              <SectionHeading title={t.processTitle} subtitle={t.processSubtitle} />
             </ScrollReveal>
 
             <div className="relative mt-20">
@@ -158,12 +159,7 @@ export default function Home() {
               <div className="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-[var(--color-cream)]" />
               
               <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
-                {[
-                  { step: "01", title: "Understand Your Vision", desc: "We discuss your theme, requirements, and budget." },
-                  { step: "02", title: "Create the Concept", desc: "We present layouts, mood boards, and floral samples." },
-                  { step: "03", title: "Decorate & Style", desc: "Procurement, production coordination, and venue prep." },
-                  { step: "04", title: "Bring to Life", desc: "Flawless execution and styling on the day of your celebration." }
-                ].map((item, i) => (
+                {t.processSteps.map((item, i) => (
                   <ScrollReveal key={i} delay={i * 0.1}>
                     <div className="bg-[var(--color-ivory)] w-24 h-24 rounded-full border border-[var(--color-cream)] flex items-center justify-center mb-8 mx-auto shadow-sm text-2xl font-serif text-[var(--color-marigold)]">
                       {item.step}
@@ -183,7 +179,7 @@ export default function Home() {
         <section className="py-24 bg-[var(--color-cream)]">
           <div className="container mx-auto px-4 md:px-8">
             <ScrollReveal>
-              <SectionHeading title="Client Stories" subtitle="Testimonials" />
+              <SectionHeading title={t.testimonialsTitle} subtitle={t.testimonialsSubtitle} />
             </ScrollReveal>
             
             <div className="mt-16">

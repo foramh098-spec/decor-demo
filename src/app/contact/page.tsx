@@ -1,10 +1,17 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
+import { uiText } from "@/data/translations";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function ContactPage() {
+  const { lang } = useLanguage();
+  const t = uiText[lang].contactPage;
+
   return (
     <>
       <Navbar />
@@ -17,10 +24,10 @@ export default function ContactPage() {
               <div className="lg:col-span-5">
                 <ScrollReveal>
                   <h1 className="text-4xl md:text-6xl font-serif text-[var(--color-charcoal)] leading-tight mb-8">
-                    Let&apos;s Plan Your Perfect Event.
+                    {t.title}
                   </h1>
                   <p className="text-lg text-[var(--color-charcoal)]/80 font-light leading-relaxed mb-12">
-                    Whether you are planning a grand wedding or an intimate celebration, we&apos;re here to help you bring your vision to life.
+                    {t.subtitle}
                   </p>
 
                   <div className="space-y-8 mb-12">
@@ -29,8 +36,10 @@ export default function ContactPage() {
                         <MapPin size={24} />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--color-charcoal)] mb-1">Our Studio</h4>
-                        <p className="text-[var(--color-charcoal)]/70 text-sm">123 Design Avenue,<br />Mumbai, India 400001</p>
+                        <h4 className="font-semibold text-[var(--color-charcoal)] mb-1">{t.studioLabel}</h4>
+                        <p className="text-[var(--color-charcoal)]/70 text-sm">
+                          {t.studioAddressLine1}<br />{t.studioAddressLine2}
+                        </p>
                       </div>
                     </div>
 
@@ -39,7 +48,7 @@ export default function ContactPage() {
                         <Phone size={24} />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--color-charcoal)] mb-1">Phone</h4>
+                        <h4 className="font-semibold text-[var(--color-charcoal)] mb-1">{t.phoneLabel}</h4>
                         <p className="text-[var(--color-charcoal)]/70 text-sm">+91 98765 43210</p>
                       </div>
                     </div>
@@ -49,17 +58,17 @@ export default function ContactPage() {
                         <Mail size={24} />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--color-charcoal)] mb-1">Email</h4>
+                        <h4 className="font-semibold text-[var(--color-charcoal)] mb-1">{t.emailLabel}</h4>
                         <p className="text-[var(--color-charcoal)]/70 text-sm">hello@decorstudio.com</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="p-8 bg-[var(--color-cream)] rounded-lg">
-                    <h4 className="font-serif text-xl text-[var(--color-charcoal)] mb-4">Prefer to talk directly?</h4>
-                    <p className="text-[var(--color-charcoal)]/70 text-sm mb-6">Our team is available on WhatsApp for quick inquiries.</p>
+                    <h4 className="font-serif text-xl text-[var(--color-charcoal)] mb-4">{t.whatsappTitle}</h4>
+                    <p className="text-[var(--color-charcoal)]/70 text-sm mb-6">{t.whatsappDesc}</p>
                     <Button variant="outline" className="w-full bg-white hover:bg-[#25D366] hover:text-white hover:border-[#25D366]">
-                      WhatsApp Us
+                      {t.whatsappBtn}
                     </Button>
                   </div>
                 </ScrollReveal>
@@ -69,34 +78,34 @@ export default function ContactPage() {
               <div className="lg:col-span-7">
                 <ScrollReveal delay={0.2}>
                   <div className="bg-white p-8 md:p-12 shadow-sm border border-[var(--color-cream)]">
-                    <h3 className="text-2xl font-serif text-[var(--color-charcoal)] mb-8">Send an Inquiry</h3>
+                    <h3 className="text-2xl font-serif text-[var(--color-charcoal)] mb-8">{t.formTitle}</h3>
                     
                     {/* TODO: Connect this form to an API route, Formspree, or EmailJS to handle submissions */}
                     <form className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="name" className="text-sm font-medium text-[var(--color-charcoal)]">Full Name</label>
+                          <label htmlFor="name" className="text-sm font-medium text-[var(--color-charcoal)]">{t.nameLabel}</label>
                           <input 
                             type="text" 
                             id="name" 
                             className="w-full px-4 py-3 bg-[var(--color-ivory)] border border-[var(--color-cream)] focus:outline-none focus:border-[var(--color-marigold)] transition-colors rounded-sm"
-                            placeholder="Jane Doe"
+                            placeholder={t.namePlaceholder}
                           />
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="email" className="text-sm font-medium text-[var(--color-charcoal)]">Email Address</label>
+                          <label htmlFor="email" className="text-sm font-medium text-[var(--color-charcoal)]">{t.emailFieldLabel}</label>
                           <input 
                             type="email" 
                             id="email" 
                             className="w-full px-4 py-3 bg-[var(--color-ivory)] border border-[var(--color-cream)] focus:outline-none focus:border-[var(--color-marigold)] transition-colors rounded-sm"
-                            placeholder="jane@example.com"
+                            placeholder={t.emailPlaceholder}
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="phone" className="text-sm font-medium text-[var(--color-charcoal)]">Phone Number</label>
+                          <label htmlFor="phone" className="text-sm font-medium text-[var(--color-charcoal)]">{t.phoneFieldLabel}</label>
                           <input 
                             type="tel" 
                             id="phone" 
@@ -105,31 +114,22 @@ export default function ContactPage() {
                           />
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="eventType" className="text-sm font-medium text-[var(--color-charcoal)]">Event Type</label>
+                          <label htmlFor="eventType" className="text-sm font-medium text-[var(--color-charcoal)]">{t.eventTypeLabel}</label>
                           <select 
                             id="eventType" 
                             className="w-full px-4 py-3 bg-[var(--color-ivory)] border border-[var(--color-cream)] focus:outline-none focus:border-[var(--color-marigold)] transition-colors rounded-sm appearance-none"
                           >
-                            <option value="">Select event type</option>
-                            <option value="wedding">Indian Marriage / Reception</option>
-                            <option value="haldi-mehndi">Haldi &amp; Mehndi</option>
-                            <option value="sangeet">Sangeet Night</option>
-                            <option value="kankotri-lekhan">Kankotri Lekhan</option>
-                            <option value="navratri">Navratri &amp; Garba</option>
-                            <option value="engagement">Engagement</option>
-                            <option value="anniversary">Anniversary</option>
-                            <option value="baby-shower">Baby Shower</option>
-                            <option value="birthday">Birthday Party</option>
-                            <option value="flea-market">Flea Market / Pop-Up</option>
-                            <option value="corporate">Corporate Event</option>
-                            <option value="other">Other Celebration</option>
+                            <option value="">{t.eventTypeSelect}</option>
+                            {t.eventTypes.map((opt) => (
+                              <option key={opt.value} value={opt.value}>{opt.label}</option>
+                            ))}
                           </select>
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="eventDate" className="text-sm font-medium text-[var(--color-charcoal)]">Event Date</label>
+                          <label htmlFor="eventDate" className="text-sm font-medium text-[var(--color-charcoal)]">{t.eventDateLabel}</label>
                           <input 
                             type="date" 
                             id="eventDate" 
@@ -137,52 +137,51 @@ export default function ContactPage() {
                           />
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="guests" className="text-sm font-medium text-[var(--color-charcoal)]">Number of Guests</label>
+                          <label htmlFor="guests" className="text-sm font-medium text-[var(--color-charcoal)]">{t.guestsLabel}</label>
                           <input 
                             type="number" 
                             id="guests" 
                             className="w-full px-4 py-3 bg-[var(--color-ivory)] border border-[var(--color-cream)] focus:outline-none focus:border-[var(--color-marigold)] transition-colors rounded-sm"
-                            placeholder="e.g. 250"
+                            placeholder={t.guestsPlaceholder}
                           />
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="venue" className="text-sm font-medium text-[var(--color-charcoal)]">Venue / Location</label>
+                        <label htmlFor="venue" className="text-sm font-medium text-[var(--color-charcoal)]">{t.venueLabel}</label>
                         <input 
                           type="text" 
                           id="venue" 
                           className="w-full px-4 py-3 bg-[var(--color-ivory)] border border-[var(--color-cream)] focus:outline-none focus:border-[var(--color-marigold)] transition-colors rounded-sm"
-                          placeholder="e.g. The Taj Mahal Palace, Mumbai"
+                          placeholder={t.venuePlaceholder}
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="budget" className="text-sm font-medium text-[var(--color-charcoal)]">Estimated Decor Budget</label>
+                        <label htmlFor="budget" className="text-sm font-medium text-[var(--color-charcoal)]">{t.budgetLabel}</label>
                         <select 
                           id="budget" 
                           className="w-full px-4 py-3 bg-[var(--color-ivory)] border border-[var(--color-cream)] focus:outline-none focus:border-[var(--color-marigold)] transition-colors rounded-sm appearance-none"
                         >
-                          <option value="">Select a range</option>
-                          <option value="under-5L">Under 5 Lakhs</option>
-                          <option value="5-15L">5 - 15 Lakhs</option>
-                          <option value="15-30L">15 - 30 Lakhs</option>
-                          <option value="30L+">30+ Lakhs</option>
+                          <option value="">{t.budgetSelect}</option>
+                          {t.budgetOptions.map((opt) => (
+                            <option key={opt.value} value={opt.value}>{opt.label}</option>
+                          ))}
                         </select>
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="message" className="text-sm font-medium text-[var(--color-charcoal)]">Tell us about your event</label>
+                        <label htmlFor="message" className="text-sm font-medium text-[var(--color-charcoal)]">{t.messageLabel}</label>
                         <textarea 
                           id="message" 
                           rows={4}
                           className="w-full px-4 py-3 bg-[var(--color-ivory)] border border-[var(--color-cream)] focus:outline-none focus:border-[var(--color-marigold)] transition-colors rounded-sm resize-none"
-                          placeholder="I am planning a floral-themed baby shower..."
+                          placeholder={t.messagePlaceholder}
                         ></textarea>
                       </div>
 
                       <Button variant="primary" size="lg" className="w-full">
-                        Send Event Enquiry
+                        {t.submitBtn}
                       </Button>
                     </form>
                   </div>
